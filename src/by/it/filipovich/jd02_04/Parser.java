@@ -15,6 +15,10 @@ class Parser {
         mapOfPriority.put("/",2);
     }
 
+    private Var parserBrackets(String expression){
+    return new Scalar("1");
+    }
+
     private int getIndex(List<String> operations) {
         int index=-1;
         int currentPriority=-1;
