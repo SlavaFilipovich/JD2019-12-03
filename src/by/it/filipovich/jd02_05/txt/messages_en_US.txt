@@ -1,3 +1,4 @@
 user.firstName = Vyacheslav
 user.lastName = Filipovich
 messages.welcome = Hello,
+messages.dateNow = Now is
