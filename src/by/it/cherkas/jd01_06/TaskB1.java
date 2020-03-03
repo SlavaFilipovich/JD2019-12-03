@@ -11,15 +11,23 @@ public class TaskB1 {
         Pattern pattern = Pattern.compile("[а-яА-ЯёЁ]+");
         Matcher matcher = pattern.matcher(Poem.text);
         while (matcher.find()) {
-            String words=matcher.group();
-            if (ok(words))
-                System.out.println(words);
+            if (ok(matcher.group()))
+                System.out.println(matcher.group());
 
         }
     }
-            private static final String vowels="аеёоиыуюяАЕЁОИЫУЮЯ";
+            private static boolean ch (char vowels) {
+                char[] chars = {'а', 'е', 'ё', 'о', 'и', 'ы', 'у', 'ю', 'я', 'А', 'Е', 'Ё', 'О', 'И', 'Ы', 'У', 'Ю', 'Я'};
+                for (int i = 0; i < chars.length; i++) {
+                    if (vowels == chars[i])
+                        return true;
+                }
+                return false;
+            }
             private static boolean ok(String words){
-                return words!=null && words.length()>1 && vowels.indexOf(words.charAt(0))<0 &&
-                        vowels.indexOf(words.length()-1)>=0;
+        char first=words.charAt(0);
+        char last=words.charAt(words.length()-1);
+        return (ch(last) & ch(first)==false);
+
             }
 }

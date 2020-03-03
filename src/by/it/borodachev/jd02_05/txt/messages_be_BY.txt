@@ -1,0 +1,6 @@
+user.firstname=Игар
+user.lastname=Барадачоу
+message.question=Як справы?
+message.welcome=Прывiтанне!
+message.current_date=Бягучы час:
+message.choose_action=Вылучыце дзеянне: end - закончыць, ru-руская мова, by-белоруская мова, en-англицкая мова

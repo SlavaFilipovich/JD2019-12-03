@@ -1,0 +1,9 @@
+user.firstName=Сяргей
+user.patronymic=Юр'евiч
+user.lastName=Бусел
+message.greeting=Вiтаю
+message.greetingQuestion=Як маецеся?
+message.wishes=Добрага дня!
+message.today=Cёння
+message.wrongLocaleInput=Вы ўвялi непадтрымоўваемую каманду месцазнаходжання
+message.introductoryMessage=Вы маеце магчымасць пераключыць мову,\nуводзячы ў кансоль наступные каманды:\n\"en\" дзеля пераключэння на ангельскую могу;\n\"be\" дзеля пераключэння на беларускую мову;\n\"ru\" дзеля пераключэння на расейскую мову.\nЎвядзi \"end\", каб выйсцi.\n

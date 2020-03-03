@@ -1,0 +1,7 @@
+D:\itAcademy\lozouski\JD2019-12-03\src\by\it\lozouski\jd02_05\txt>native2ascii -encoding utf-8 messages.txt messages.properties
+
+D:\itAcademy\lozouski\JD2019-12-03\src\by\it\lozouski\jd02_05\txt>native2ascii -encoding utf-8 messages_ru_RU.txt messages_ru_RU.properties
+
+D:\itAcademy\lozouski\JD2019-12-03\src\by\it\lozouski\jd02_05\txt>native2ascii -encoding utf-8 messages_en_US.txt messages_en_US.properties
+
+D:\itAcademy\lozouski\JD2019-12-03\src\by\it\lozouski\jd02_05\txt>native2ascii -encoding utf-8 messages_be_BY.txt messages_be_BY.properties

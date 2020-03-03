@@ -1,0 +1,4 @@
+user.firstname=Крысцина
+user.lastname=Патапович
+message.question=Як справы?
+message.welcome=Прывiтанне!

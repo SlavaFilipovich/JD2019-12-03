@@ -1,0 +1,5 @@
+user.firstname=Andrew
+user.lastname=Lozouski
+message.question=How are you?
+message.welcome=Welcome!
+message.today=Today:

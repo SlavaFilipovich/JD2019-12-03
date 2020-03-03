@@ -13,7 +13,7 @@ public class Scalar extends Var {
              this.value= Double.valueOf(var);
          }
          catch (NullPointerException |NumberFormatException e){
-             throw new CalcException("ошибка преобразования строки в число");
+             throw new CalcException(LanguageManager.get(ErrorMessage.error_conversion));
          }
 
     }

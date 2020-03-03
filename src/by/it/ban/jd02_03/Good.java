@@ -5,7 +5,7 @@ import java.util.Map;
 
 class Good {
 
-    private static Map<String, Double> goods = new HashMap<>() {
+    private static Map<String, Double> goods = new HashMap<String, Double>() {
         {
             put("Хлеб",2.0);
             put("Молоко",1.0);

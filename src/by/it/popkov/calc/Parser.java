@@ -48,7 +48,7 @@ class Parser {
                     return first.div(second);
             }
         }
-        throw new CalcException("Ошибка ввода");
+        throw new CalcException(Error.INPUT_ERROR);
     }
 
     Var calc(String expression) throws CalcException {

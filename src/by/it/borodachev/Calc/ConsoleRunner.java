@@ -18,6 +18,7 @@ public class ConsoleRunner {
             }
             try {
                 Var result = parser.calc(expression);
+                if  (!(result==null))
                 printer.print(result);
             }
          catch (CalcException e) {

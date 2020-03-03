@@ -5,21 +5,24 @@ import java.util.regex.Pattern;
 
 public class Parser {
     Var calc(String expression) {
-        String[] operand = expression.split(Patterns.OPERATION);
-        Var one = Var.createVar(operand[0]);
-        Var two = Var.createVar(operand[1]);
-        if (one == null || two == null) {
-            return null;
-        }
-        Pattern p = Pattern.compile(Patterns.OPERATION);
-        Matcher m = p.matcher(expression);
+
+        Matcher m =Pattern.compile(Patterns.MATH_SIGN).matcher(expression);
         if (m.find()){
-            String operation=m.group();
-            switch (operation){
-                case "+": return  one.add(two);
-                case "-": return one.sub(two);
-                case "*": return one.mul(two);
-                case "/": return one.div(two);
+            String sing = m.group();
+            String[] values = expression.split("[-+/*]");
+            String first = values[0];
+            String second = values[1];
+            if (Var.newVar(first) != null && Var.newVar(second) != null){
+                switch (sing){
+                    case "+":
+                        return Var.newVar(first).add(Var.newVar(second));
+                    case "-":
+                        return Var.newVar(first).sub(Var.newVar(second));
+                    case "*":
+                        return Var.newVar(first).mul(Var.newVar(second));
+                    case "/":
+                        return Var.newVar(first).div(Var.newVar(second));
+                }
             }
 
         }

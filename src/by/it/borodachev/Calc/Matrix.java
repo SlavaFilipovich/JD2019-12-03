@@ -11,12 +11,12 @@ public class Matrix extends Var {
       public int rows() { return rowLength;}
       public int cols() { return colLength;}
       public double getValue(int row,int col) throws CalcException {
-        if ((row<0)||(col<0)) throw new CalcException("Неверный индекс");
-        if ((row>=rowLength)||(col>=colLength)) throw new CalcException("Неверный индекс");
+        if ((row<0)||(col<0)) throw new CalcException(LanguageManager.get(ErrorMessage.index_error));
+        if ((row>=rowLength)||(col>=colLength)) throw new CalcException(LanguageManager.get(ErrorMessage.index_error));
         return this.value [row][col];
     }
     public Matrix(double [][] args) throws CalcException {
-        if (args.length == 0) throw new CalcException("Длина массива =0");
+        if (args.length == 0) throw new CalcException(LanguageManager.get(ErrorMessage.zero_length));
         rowLength=args.length;
         colLength=args[0].length;
         value=new double [rowLength][colLength];
@@ -27,8 +27,8 @@ public class Matrix extends Var {
         }
     }
     public Matrix(Matrix vc) throws CalcException {
-        if (vc.rows() == 0) throw new CalcException("Длина массива =0");
-        if (vc.cols() == 0) throw new CalcException("Длина массива =0");
+        if (vc.rows() == 0) throw new CalcException(LanguageManager.get(ErrorMessage.zero_length));
+        if (vc.cols() == 0) throw new CalcException(LanguageManager.get(ErrorMessage.zero_length));
 
         rowLength=vc.rows();
         colLength=vc.cols();
@@ -44,7 +44,7 @@ public class Matrix extends Var {
         str=str.trim();
         str=str.replace(" ","");
         String[] valStr;
-        Pattern pat= Pattern.compile("[^{}][0-9,/.]+");
+        Pattern pat= Pattern.compile("[^{}][0-9,-/.]+");
         Matcher m=pat.matcher(str);
         rowLength=0;
         while (m.find()) {rowLength++;};
@@ -103,7 +103,8 @@ public class Matrix extends Var {
         }
         if (newValue instanceof Vector) {
             Vector tmpVector = (Vector) newValue;
-            if (tmpVector.length() !=rowLength)  {throw new CalcException("Diff Length"); }
+            if (tmpVector.length() !=rowLength)
+             {throw new CalcException(LanguageManager.get(ErrorMessage.diff_Length)); }
             double[][] tmpArr =Arrays.copyOf(value, value.length);
             for (int i = 0; i < tmpArr.length; i++) {
                 tmpArr[i] = Arrays.copyOf(value[i], value[i].length);
@@ -118,7 +119,8 @@ public class Matrix extends Var {
         }
         if (newValue instanceof Matrix) {
             Matrix tmpMatrix = (Matrix) newValue;
-            if ((tmpMatrix.rows() !=rowLength) ||(tmpMatrix.cols()!=colLength))  {throw new CalcException("Diff Length"); }
+            if ((tmpMatrix.rows() !=rowLength) ||(tmpMatrix.cols()!=colLength))
+             {throw new CalcException(LanguageManager.get(ErrorMessage.diff_Length)); }
              double[][] tmpArr =Arrays.copyOf(value, value.length);
             for (int i = 0; i < tmpArr.length; i++) {
                 tmpArr[i] = Arrays.copyOf(value[i], value[i].length);
@@ -151,7 +153,8 @@ public class Matrix extends Var {
         }
         if (newValue instanceof Vector) {
             Vector tmpVector = (Vector) newValue;
-            if (tmpVector.length() !=rowLength)  {throw new CalcException("Diff Length"); }
+            if (tmpVector.length() !=rowLength)
+             {throw new CalcException(LanguageManager.get(ErrorMessage.diff_Length)); }
             double[][] tmpArr =Arrays.copyOf(value, value.length);
             for (int i = 0; i < tmpArr.length; i++) {
                 tmpArr[i] = Arrays.copyOf(value[i], value[i].length);
@@ -166,7 +169,8 @@ public class Matrix extends Var {
         }
         if (newValue instanceof Matrix) {
             Matrix tmpMatrix = (Matrix) newValue;
-            if ((tmpMatrix.rows() !=rowLength) ||(tmpMatrix.cols()!=colLength))  {throw new CalcException("Diff Length"); }
+            if ((tmpMatrix.rows() !=rowLength) ||(tmpMatrix.cols()!=colLength))
+            {throw new CalcException(LanguageManager.get(ErrorMessage.diff_Length)); }
             double[][] tmpArr =Arrays.copyOf(value, value.length);
             for (int i = 0; i < tmpArr.length; i++) {
                 tmpArr[i] = Arrays.copyOf(value[i], value[i].length);
@@ -200,7 +204,7 @@ public class Matrix extends Var {
         }
         if (newValue instanceof Vector) {
             Vector tmpVector = (Vector) newValue;
-            if (tmpVector.length() !=rowLength)  {throw new CalcException("Diff Length"); }
+            if (tmpVector.length() !=rowLength)  {throw new CalcException(LanguageManager.get(ErrorMessage.diff_Length)); }
             double[] tmpArr =new double[rowLength];
 
             for (int i = 0; i < rowLength; i++) {
@@ -213,7 +217,8 @@ public class Matrix extends Var {
         }
         if (newValue instanceof Matrix) {
             Matrix tmpMatrix = (Matrix) newValue;
-            if ((tmpMatrix.rows() !=rowLength) ||(tmpMatrix.cols()!=colLength))  {throw new CalcException("Diff Length"); }
+            if ((tmpMatrix.rows() !=rowLength) ||(tmpMatrix.cols()!=colLength))
+            {throw new CalcException(LanguageManager.get(ErrorMessage.diff_Length)); }
             double[][] tmpArr =new double [rowLength][colLength];
 
             for (int i = 0; i < tmpMatrix.rows(); i++) {
@@ -234,6 +239,22 @@ public class Matrix extends Var {
 
     @Override
     public Var div(Var newValue) throws CalcException {
+        if (newValue instanceof Scalar) {
+            Scalar tmpScalar = (Scalar) newValue;
+            if (tmpScalar.getValue() == 0) {
+                throw new CalcException(LanguageManager.get(ErrorMessage.division_by_zero));
+            }
+            double[][] tmpArr =Arrays.copyOf(value, value.length);
+            for (int i = 0; i < tmpArr.length; i++) {
+                tmpArr[i] = Arrays.copyOf(value[i], value[i].length);
+            }
+            for (int i = 0; i < rowLength; i++) {
+                for (int i1 = 0; i1 <colLength; i1++) {
+                    tmpArr[i][i1] /= tmpScalar.getValue() ;
+                }
+            }
+            return new Matrix(tmpArr);
+        }
         return super.div(newValue);
     }
 }

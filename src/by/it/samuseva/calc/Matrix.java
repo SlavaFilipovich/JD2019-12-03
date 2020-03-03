@@ -48,7 +48,7 @@ class Matrix extends Var {
     public Var add(Scalar left) throws CalcException {
         double[][] array = new double[this.value.length][this.value[0].length];
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
+            for (int j = 0; j < array[0].length; j++) {
                 array[i][j] = this.value[i][j] + left.getValue();
             }
         }
@@ -61,7 +61,7 @@ class Matrix extends Var {
         }
         double[][] array = new double[this.value.length][this.value[0].length];
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
+            for (int j = 0; j < array[0].length; j++) {
                 array[i][j] = this.value[i][j] + left.value[i][j];
             }
         }
@@ -78,7 +78,7 @@ class Matrix extends Var {
     public Var sub(Scalar left) throws CalcException {
         double[][] array = new double[this.value.length][this.value[0].length];
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
+            for (int j = 0; j < array[0].length; j++) {
                 array[i][j] = this.value[i][j] - left.getValue();
             }
         }
@@ -92,7 +92,7 @@ class Matrix extends Var {
         }
         double[][] array = new double[this.value.length][this.value[0].length];
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
+            for (int j = 0; j < array[0].length; j++) {
                 array[i][j] = this.value[i][j]-left.value[i][j];
             }
         }
@@ -109,7 +109,7 @@ class Matrix extends Var {
     public Var mul(Scalar left) throws CalcException {
         double[][] array = new double[this.value.length][this.value[0].length];
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
+            for (int j = 0; j < array[0].length; j++) {
                 array[i][j] = this.value[i][j] * left.getValue();
             }
         }
@@ -122,7 +122,7 @@ class Matrix extends Var {
         double[][] array = new double[this.value.length][this.value[0].length];
         double[] mul = new double[array.length];
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
+            for (int j = 0; j < array[0].length; j++) {
                 array[i][j] = this.value[i][j] * left.getValue()[j];
                 mul[i] += array[i][j];
             }

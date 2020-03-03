@@ -1,0 +1,33 @@
+error.divisionByZero=Дзяленне на НОЛЬ немагчыма.
+error.differentLengthVectors=Розная даўжыня вектараў!
+error.invalidLength=Некарэктная даўжыня вектару ці матрыцы!
+error.incorrectMatrixFormat=Некарэктны фармат матрыцы!
+error.operationAdd=Аперацыя складання
+error.operationSub=Аперацыя аднімання
+error.operationMul=Аперацыя множання
+error.operationDiv=Аперацыя дзялення
+error.isntPossible= не магчымая.
+error.incorrectInput=Некарэктны ўвод. Калі ласка паспрабуйце зноў.
+error.errors=Паведамленне пра памылку:
+error.incorrectVarCreate=Некарэктнае стварэнне зменнай. Калі ласка паспрабуйце зноў.
+error.varIsNull=У зменнай нічога няма.
+error.fileNotFound=Выключэнне - Файл не выяўлены! ---
+error.wrongVarName=Няправільнае імя зменнай.
+log.errorIO=Памылка ўводу-вываду;
+log.time=Час лога:
+log.event=. Падзея:
+log.programStart=****************************-------Праграма была запушчана. -------****************************
+log.programFinish=****************************-------Праграма была завершана. -------****************************
+log.result=Вынік:
+messages.calcStarted=Калькулятар стартаваў! Прыступім!
+messages.savedVar=Зменныя, захаваныя ў памяці:
+messages.storedVar= пераменная захавана ў памяці.
+messages.memoryIsEmpty=Памяць пустая!
+messages.needThisValueFormat=Калі ласка, увядзіце значэнне ў фармаце: Скаляр, Вектар, Матрыца і паспрабуйце зноў.
+messages.needThisVarFormat=Калі ласка, увядзіце імя зменнай у фармаце:
+messages.formatLetters=Лацінскія літары і лічбы = ваша значэнне (Скаляр, Вектар або Матрыца)
+messages.undefinedVar=Не вызначаная зменная:
+messages.currentLang=Цяперашняя мова: Беларусская.
+
+
+

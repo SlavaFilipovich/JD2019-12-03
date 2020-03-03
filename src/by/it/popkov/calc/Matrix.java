@@ -136,7 +136,7 @@ class Matrix extends Var {
     @Override
     public Var sub(Matrix other) throws CalcException {
         if (other.value.length != this.value.length || other.value[0].length != this.value[0].length) {
-            throw new CalcException("Некоректрый формат матрич");
+            throw new CalcException(Error.UNCORRECT_MATRIX_FORMAT);
         }
 
         double[][] outPut = new double[this.value.length][this.value[0].length];
@@ -174,7 +174,7 @@ class Matrix extends Var {
     @Override
     public Var mul(Vector other) throws CalcException {
         if (other.getValue().length != this.value.length && other.getValue().length != this.value[0].length) {
-            throw new CalcException("Некоректрый формат матрич");
+            throw new CalcException(Error.UNCORRECT_MATRIX_FORMAT);
         }
         double[] vector = other.getValue();
         double[] outPut = new double[this.value.length];
@@ -189,7 +189,7 @@ class Matrix extends Var {
     @Override
     public Var mul(Matrix other) throws CalcException {
         if (other.value.length != this.value.length || other.value[0].length != this.value[0].length) {
-            throw new CalcException("Некоректрый формат матрич");
+            throw new CalcException(Error.UNCORRECT_MATRIX_FORMAT);
         }
         double[][] outPut = new double[this.value.length][other.value[0].length];
         for (int i = 0; i < this.value.length; i++) {
@@ -210,7 +210,7 @@ class Matrix extends Var {
     @Override
     public Var div(Scalar other) throws CalcException {
         if (other.getValue() == 0) {
-            throw new CalcException("Деление на 0");
+            throw new CalcException(Error.DIVISION_BY_ZERO);
         }
 
         double[][] outPut = new double[this.value.length][this.value[0].length];

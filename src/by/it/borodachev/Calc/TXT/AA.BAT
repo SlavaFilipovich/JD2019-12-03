@@ -1,0 +1,1 @@
+D:\ORACLE\product\11.2.0\client_1\jdk\bin\NATIVE2ASCII -encoding utf8 %1 %2

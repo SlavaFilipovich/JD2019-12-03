@@ -9,12 +9,12 @@ public class Vector extends Var {
       private int valueLength;
       public int length() { return valueLength;}
       public double getValue(int i) throws CalcException {
-        if (i<0) throw new CalcException("Значение индекса меньше 0");
-        if (i>=value.length) throw new CalcException("Значение индекса больше размерности вектора");
+        if (i<0) throw new CalcException(LanguageManager.get(ErrorMessage.index_error));
+        if (i>=value.length) throw new CalcException(LanguageManager.get(ErrorMessage.index_error));
         return this.value [i];
     }
     public Vector (double... args) throws CalcException {
-        if (args.length == 0) throw new CalcException("Длина Вектора =0");
+        if (args.length == 0) throw new CalcException(LanguageManager.get(ErrorMessage.zero_length));
         valueLength=args.length;
         value=new double [valueLength];
         for (int i = 0; (i < valueLength); i++) {
@@ -22,7 +22,7 @@ public class Vector extends Var {
         }
     }
     public Vector (Vector vc) throws CalcException {
-        if (vc.length() == 0) throw new CalcException("Длина Вектора =0");
+        if (vc.length() == 0) throw new CalcException(LanguageManager.get(ErrorMessage.zero_length));
         valueLength=vc.length();
         value=new double [valueLength];
         for (int i = 0; (i < valueLength); i++) {
@@ -30,16 +30,16 @@ public class Vector extends Var {
         }
     }
     public Vector (String str) throws CalcException {
-          str=str.trim();
+        str=str.trim();
         String[] valStr;
-        Pattern pat= Pattern.compile("[^{}][0-9,/.]+");
+        Pattern pat= Pattern.compile("[^{}][0-9,-/.]+");
         Matcher m=pat.matcher(str);
         if (m.find()) {
             valStr = m.group().split(",");}
            else {
-               throw new CalcException("Длина Вектора =0");
+               throw new CalcException(LanguageManager.get(ErrorMessage.zero_length));
            }
-        if (valStr.length == 0) throw new CalcException("Длина Вектора =0");
+        if (valStr.length == 0) throw new CalcException(LanguageManager.get(ErrorMessage.zero_length));
         valueLength=valStr.length;
         value=new double [valueLength];
         for (int i = 0; (i < valueLength); i++) {
@@ -104,7 +104,7 @@ public class Vector extends Var {
                 return new Vector(tmpArr);
             }
         }
-        return super.add(newValue);
+        return super.sub(newValue);
     }
 
     @Override
@@ -128,7 +128,7 @@ public class Vector extends Var {
                 return new Scalar(retValue);
             }
         }
-        return super.add(newValue);
+        return super.mul(newValue);
     }
 
 
@@ -137,7 +137,7 @@ public class Vector extends Var {
         if (newValue instanceof Scalar) {
             Scalar tmpScalar = (Scalar) newValue;
             if (tmpScalar.getValue() == 0) {
-                throw new CalcException("Division by zero");
+                throw new CalcException(LanguageManager.get(ErrorMessage.division_by_zero));
             } else {
                 double[] tmpArr = Arrays.copyOf(value, value.length);
                 for (int i = 0; i < tmpArr.length; i++) {
@@ -147,7 +147,7 @@ public class Vector extends Var {
             }
         }
 
-        return super.add(newValue);
+        return super.div(newValue);
         }
 
         }

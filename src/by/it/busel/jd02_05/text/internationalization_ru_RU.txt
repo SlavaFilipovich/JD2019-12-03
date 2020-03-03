@@ -1,0 +1,9 @@
+user.firstName=Сергей
+user.patronymic=Юрьевич
+user.lastName=Бусел
+message.greeting=Приветствую
+message.greetingQuestion=Как дела?
+message.wishes=Хорошего дня!
+message.today=Сегодня
+message.wrongLocaleInput=Вы ввели неподдерживаемую команду местонахождения
+message.introductoryMessage=Вы имеете возможность переключить язык, \вводя в консоль следующие команды:\n\"en\" для переключения на английский язык;\n\"be\" для переключения на белорусский язык;\n\"ru\" для переключения на русский язык.\nВведите \"end\", чтобы выйти.\n

@@ -1,6 +1,7 @@
 package by.it.lozouski.calc;
-
+import static by.it.lozouski.calc.ConsoleRunner.langService;
 class Scalar extends Var {
+
 
     private double value;
 
@@ -97,7 +98,7 @@ class Scalar extends Var {
     Var div(Scalar otherScalar) throws CalcException {
         double div = otherScalar.value / this.value;
         if (Double.isInfinite(div)){
-            throw new CalcException("Division by ZERO is impossible");
+            throw new CalcException(String.format("%s ",langService.get(Error.ERR_DIV_BY_ZERO)));
         }
         return new Scalar(div);
     }
@@ -107,7 +108,7 @@ class Scalar extends Var {
         double[] div = new double[otherVector.getValue().length];
         for (int i = 0; i < otherVector.getValue().length; i++) {
             div[i] = otherVector.getValue()[i] / this.value;
-            if (Double.isInfinite(div[i])) throw new CalcException("Division by ZERO isn't possible");
+            if (Double.isInfinite(div[i])) throw new CalcException(String.format("%s ",langService.get(Error.ERR_DIV_BY_ZERO)));
         }
         return new Vector(div);
     }

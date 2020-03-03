@@ -110,7 +110,7 @@ class Scalar extends Var {
         if (this.value != 0) {
             return new Scalar(other.value / this.value);
         }
-        throw new CalcException("Division by zero");
+        throw new CalcException(ConsoleRunner.lang.get(ErrorMessages.ZERO));
     }
 
     @Override
@@ -122,7 +122,7 @@ class Scalar extends Var {
             }
             return new Vector(op1);
         }
-        throw new CalcException("Division by zero");
+        throw new CalcException(ConsoleRunner.lang.get(ErrorMessages.ZERO));
     }
 
     @Override
@@ -140,6 +140,6 @@ class Scalar extends Var {
             }
             return new Matrix(op1);
         }
-        throw new CalcException("Division by zero");
+        throw new CalcException(ConsoleRunner.lang.get(ErrorMessages.ZERO));
     }
 }

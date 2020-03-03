@@ -1,0 +1,4 @@
+messages.firstname=Alexander
+messages.lastname=Kuzmich
+messages.question=How do you do?
+messages.welcome=Hello!

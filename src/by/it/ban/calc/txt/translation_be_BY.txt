@@ -1,0 +1,9 @@
+error.add=памылка складання
+error.sub=памылка аднімання
+error.div=памылка дзялення
+error.mul=памылка множання
+error.init=памылка стварэння переменнай
+error.file=памылка файла
+error.unknown=невядомая памылка
+error.zero=дзяленне на нуль
+error.error=ПАМЫЛКА:

@@ -1,6 +1,6 @@
 package by.it.shulga.jd01.jd02_01;
 
-public interface IUseBacket {
-    void takeBacket();
-    void putGoodsToBacket();
+interface IUseBacket{
+    void takeBacket(); //взял корзину
+    void putGoodsToBacket(); //положил выбранный товар в корзину
 }

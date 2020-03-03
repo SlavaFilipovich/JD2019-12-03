@@ -4,29 +4,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Market {
-
     public static void main(String[] args) {
-        System.out.println("---------- Market opened");
-        List<Buyer> buyers=new ArrayList<>(1000);
-        int number=0;
-        for (int time = 0; time <= 120; time++) {
-            int count= Helper.random(0,2);
-            for (int i = 1; i <= count; i++) {
-                Buyer buyer = new Buyer(++number);
-                buyers.add(buyer);
-                buyer.start();
-            }
-            Helper.sleep(1000);
-        }
+        Helper.writeGoodsMap();
+        System.out.println("****** Open shop ******");
+        List<Buyer> buyerList = new ArrayList<>(1777);
+        int counter = 1;
+        int letIn = 0;
+        for (int t = 0; t < 120; t++) {
+            if (t == 0) letIn = 10;
+            if (t > 0 && t < 30) letIn = (t + 10) / 6; //UP
+            if (t >= 30 && t < 60) letIn = (40 + (30 - t)) / 6; //DOWN
+            if (t >= 60 && t < 90) letIn = ((t - 60) + 10) / 6; //UP
+            if (t >= 90) letIn = (40 + (90 - t)) / 6; //DOWN
 
-        for (Buyer buyer : buyers) {
+            for (int j = 1; j <= letIn; j++) {
+                Buyer buyer = new Buyer(counter++);
+                buyer.start();
+                buyerList.add(buyer);
+            }
+            try {
+                Thread.sleep(1000 / Dispatcher.SPEED_BOOST);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        for (Buyer buyer : buyerList) {
             try {
                 buyer.join();
             } catch (InterruptedException e) {
-                System.out.println("WOW2");
+                e.printStackTrace();
             }
         }
-        System.out.println("--------- Market closed");
-    }
+        System.out.println("****** Close shop ******");
 
+    }
 }
+
+

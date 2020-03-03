@@ -10,7 +10,7 @@ class Printer {
             LogFile.print(var.toString());
         }
         else
-            throw new CalcException("Printing variable error");
+            throw new CalcException(ConsoleRunner.lang.get(ErrorMessages.UNKNOWN));
     }
 
 

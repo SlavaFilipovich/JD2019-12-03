@@ -1,0 +1,9 @@
+error.add=ошибка сложения
+error.sub=ошибка вычитания
+error.div=ошибка деления
+error.mul=ошибка умножения
+error.init=ошибка создания переменной
+error.file=ошибка файла
+error.unknown=неизвестная ошибка
+error.zero=деление на ноль
+error.error=ОШИБКА:

@@ -1,0 +1,9 @@
+user.firstName=Siarhei
+user.patronymic=Yurievich
+user.lastName=Busiel
+message.greeting=Hello
+message.greetingQuestion=How are you?
+message.wishes=Have a nice day!
+message.today=Today
+message.wrongLocaleInput=You have entered an incompatible locale command
+message.introductoryMessage=You have a possibility to switch a language by\ninputting in a console the following commands:\n\"en\" in order to switch to British English;\n\"be\" in order to switch to Belarusian;\n\"ru\" in order to switch to Russian.\nInput \"end\" in order to quit.\n

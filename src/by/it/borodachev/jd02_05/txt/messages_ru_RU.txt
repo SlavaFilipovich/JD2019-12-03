@@ -1,0 +1,6 @@
+user.firstname=Игорь
+user.lastname=Бородачев
+message.question=Как дела?
+message.welcome=Привет!
+message.current_date=Текущее время:
+message.choose_action=Выберите что-то одно: end - закончить, ru-русский , by-белоруский , en-ангийский

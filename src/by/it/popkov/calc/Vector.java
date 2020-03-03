@@ -64,7 +64,7 @@ class Vector extends Var {
 
     @Override
     public Var add(Vector other) throws CalcException {
-        if (other.value.length != this.value.length) throw new CalcException("Разная длина векторов");
+        if (other.value.length != this.value.length) throw new CalcException(Error.UNCORRECT_VECTOR_FORMAT);
         double[] out = new double[this.value.length];
         for (int i = 0; i < out.length; i++) {
             out[i] = this.value[i] + other.value[i];
@@ -93,7 +93,7 @@ class Vector extends Var {
 
     @Override
     public Var sub(Vector other) throws CalcException {
-        if (other.value.length != this.value.length) throw new CalcException("Разная длина векторов");
+        if (other.value.length != this.value.length) throw new CalcException(Error.UNCORRECT_VECTOR_FORMAT);
         double[] out = new double[this.value.length];
         for (int i = 0; i < out.length; i++) {
             out[i] = this.value[i] - other.value[i];
@@ -122,7 +122,7 @@ class Vector extends Var {
 
     @Override
     public Var mul(Vector other) throws CalcException {
-        if (other.value.length != this.value.length) throw new CalcException("Разная длина векторов");
+        if (other.value.length != this.value.length) throw new CalcException(Error.UNCORRECT_VECTOR_FORMAT);
         double out = 0;
         for (int i = 0; i < this.value.length; i++) {
             out += this.value[i] * other.value[i];
@@ -134,7 +134,7 @@ class Vector extends Var {
     public Var mul(Matrix other) throws CalcException {
         double[][] otherValue = other.getValue();
         if (this.value.length != otherValue.length && this.value.length != otherValue[0].length) {
-            throw new CalcException("Некоректрый формат матрич");
+            throw new CalcException(Error.UNCORRECT_MATRIX_FORMAT);
         }
         double[] vector = this.value;
         double[] outPut = new double[this.value.length];
@@ -154,7 +154,7 @@ class Vector extends Var {
     @Override
     public Var div(Scalar other) throws CalcException {
         if (other.getValue() == 0) {
-            throw new CalcException("Деление на 0");
+            throw new CalcException(Error.DIVISION_BY_ZERO);
         }
         double[] out = new double[this.value.length];
         for (int i = 0; i < out.length; i++) {

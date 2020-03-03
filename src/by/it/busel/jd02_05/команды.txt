@@ -1,0 +1,46 @@
+In this file commands, which were used in order
+to create files with extensions ".properties"
+from files with extensions ".txt"
+by the means of standard Java utility "native2ascii"
+are represented:
+- Variant I:
+    1) press "Win+R";
+    2) input "cmd";
+    3) input "*:", where "*" character is a name of disk, where aforementioned txt-files are stored;
+    4) input "cd ***", where "***" is an absolute path to a folder, where the txt-files are stored;
+    5) input "native2ascii -encoding utf-8 internationalization.txt  ..\resources\internationalization.properties";
+    6) input "native2ascii -encoding utf-8 internationalization_be_BY.txt  ..\resources\internationalization_be_BY.properties";
+    7) input "native2ascii -encoding utf-8 internationalization_ru_RU.txt  ..\resources\internationalization_ru_RU.properties";
+    8) input "native2ascii -encoding utf-8 internationalization_en_US.txt  ..\resources\internationalization_en_US.properties";
+    9) input "native2ascii -encoding utf-8 internationalization_en_GB.txt  ..\resources\internationalization_en_GB.properties";
+
+    And properties-files are complete.
+
+- Variant II:
+    1) open in "Windows-Explorer" a folder where aforementioned txt-files are stored;
+    2) press simultaneously a "Shift"-button and a right mouse button;
+    3) choose "Open command window here" or its equivalent;
+    4) input "native2ascii -encoding utf-8 internationalization.txt  ..\resources\internationalization.properties";
+    5) input "native2ascii -encoding utf-8 internationalization_be_BY.txt  ..\resources\internationalization_be_BY.properties";
+    6) input "native2ascii -encoding utf-8 internationalization_ru_RU.txt  ..\resources\internationalization_ru_RU.properties";
+    7) input "native2ascii -encoding utf-8 internationalization_en_US.txt  ..\resources\internationalization_en_US.properties";
+    8) input "native2ascii -encoding utf-8 internationalization_en_GB.txt  ..\resources\internationalization_en_GB.properties";
+
+    And properties-files are complete.
+
+- Variant III:
+    1) open in "Windows-Explorer" a folder where aforementioned txt-files are stored;
+    2) create here a file with an extension ".bat";
+    3) open this file in a standard Windows "notepad.exe";
+    4) input the following text:
+
+     native2ascii -encoding utf-8 internationalization.txt  ..\resources\internationalization.properties
+     native2ascii -encoding utf-8 internationalization_be_BY.txt  ..\resources\internationalization_be_BY.properties
+     native2ascii -encoding utf-8 internationalization_ru_RU.txt  ..\resources\internationalization_ru_RU.properties
+     native2ascii -encoding utf-8 internationalization_en_US.txt  ..\resources\internationalization_en_US.properties
+     native2ascii -encoding utf-8 internationalization_en_GB.txt  ..\resources\internationalization_en_GB.properties
+
+     5) save changes in this file and cloe it;
+     6) open this file by double-click;
+
+     And properties-files are complete.

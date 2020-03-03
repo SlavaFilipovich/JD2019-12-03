@@ -23,6 +23,10 @@ class Vector extends Var {
         this.value = array;
     }
 
+    public Vector(Var calc) {
+        super();
+    }
+
     //////////   methods for add operation
     @Override
     public Var add(Var rigth) throws CalcException{

@@ -1,0 +1,7 @@
+messages.firstname=Александр
+messages.lastname=Кузьмич
+messages.question=Как дела?
+messages.welcome=Привет!
+messages.current_date=Текущая дата:
+messages.enter_action=Введите en, ru, by смены языка или end для выхода.
+

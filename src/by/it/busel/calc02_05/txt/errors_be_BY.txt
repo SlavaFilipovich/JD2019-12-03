@@ -1,0 +1,12 @@
+CalcException.constructor=ERROR: (ПАМЫЛКА:)
+Parser.m.ifOneOrMoreOperandsExistOtherwiseThrowCalcException=Вы ўвялі толькі матэматычны аператар.
+Parser.m.calculateVar=Матэматычны аператар не знойдзены.\nПраверце выраз, які Вы ўвялі. Затым зноў увядзіце свой выраз, калі ласка!
+Printer.m.formLog_input=Увод:
+Printer.m.formLog_output=Выхад:
+ResourceManager.m.informAboutCurrentLocale=Наяўная мова - %s\n
+Scalar.m.div_Scalar_Vector_Matrix=Дзяленне на нуль.
+Var.m.createVar=Няправiльны фармат уводу альбо несахранённы(ыя) Var-выраз(ы)!\nПраверце выраз, якi Вы ўвялi. Потым увядзiце Ваш выраз зноў, калi-ласка!
+Var.add_all=Аперацыю \"складанне\" %s + %s нельга выканаць.
+Var.sub_all=Аперацыю \"адніманне\" %s - %s нельга выканаць.
+Var.mul_all=Аперацыю \"множанне\" %s * %s нельга выканаць.
+Var.div_all=Аперацыю \"дзяленне\" %s / %s нельга выканаць.

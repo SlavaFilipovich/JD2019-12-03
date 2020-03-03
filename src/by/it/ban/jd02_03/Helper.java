@@ -37,7 +37,7 @@ class Helper {
         StringBuilder buffer = new StringBuilder();
         StringBuffer out = new StringBuffer();
 
-        buffer.append(SPACE_BUFFER.repeat(Math.max(0, cashier.getNum())));
+        buffer.append(repeat(SPACE_BUFFER,Math.max(0, cashier.getNum())));
         out.append(buffer).append(cashier);
         double sum = 0.0;
         for (Map.Entry<String, Double> entry : buyer.backet.entrySet()) {
@@ -49,16 +49,24 @@ class Helper {
         printAllCash();
     }
 
+    private static StringBuffer repeat(String s, int i) {
+        StringBuffer sb=new StringBuffer(s);
+        for (int j = 0; j < i; j++) {
+            sb.append(s);
+        }
+        return sb;
+    }
+
     private static void printAllCash() {
         StringBuilder buffer = new StringBuilder();
-        buffer.append(SPACE_BUFFER.repeat(7));
+        buffer.append(repeat(SPACE_BUFFER,7));
         double sum = Dispatcher.getAllCash();
         System.out.println(buffer.append(String.format("Общая касса : %6.2f", sum)));
     }
 
     static void printQueue() {
         StringBuffer buffer = new StringBuffer();
-        buffer.append(SPACE_BUFFER.repeat(6));
+        buffer.append(repeat(SPACE_BUFFER,6));
         int countBuyer = QueueBuyer.getLength();
         int countPens = QueuePensioneer.getLength();
         System.out.println(buffer

@@ -20,7 +20,7 @@ class VarFile {
         return fileName;
     }
 
-    static void load(){
+    static void load() throws CalcException {
         try {
             Parser parser = new Parser();
             Files.lines(Paths.get(varFile))
@@ -32,7 +32,7 @@ class VarFile {
                         }
                     });
         } catch (IOException e) {
-
+            throw new CalcException(ErrorMessages.FILE,e);
         }
     }
 
@@ -45,7 +45,7 @@ class VarFile {
                 }
             }
         } catch (FileNotFoundException e) {
-            throw new CalcException(varFile+" error",e);
+            throw new CalcException(ErrorMessages.FILE+" "+varFile,e);
 
         }
     }

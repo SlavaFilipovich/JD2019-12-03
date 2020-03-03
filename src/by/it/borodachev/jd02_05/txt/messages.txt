@@ -1,0 +1,6 @@
+user.firstname=Igor
+user.lastname=Borodachev
+message.question=How do you do?
+message.welcome=Hi!
+message.current_date=Current date:
+message.choose_action=Choose action: end - exit, ru-Russian, by-Belorussian, en-English

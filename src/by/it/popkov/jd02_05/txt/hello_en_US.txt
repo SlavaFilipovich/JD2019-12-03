@@ -1,0 +1,3 @@
+user.firstName=Vladislav
+user.secondName=Popkov
+message.welcome=Hello!

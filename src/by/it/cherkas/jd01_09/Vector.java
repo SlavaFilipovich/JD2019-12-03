@@ -14,15 +14,17 @@ class Vector extends Var {
 
         }
         Vector(Vector vector){
-                 this(vector.value);
+                 this.value = new double[vector.value.length];
+                 System.arraycopy(vector.value, 0, this.value, 0, vector.value.length);
         }
 
         Vector(String strVector){
-                 strVector=strVector.replaceAll("[{|}]","");
-                 String[] stringValue=strVector.split(",");
+                 strVector = strVector.replaceAll("[{}]","");
+                 strVector = strVector.replaceAll(",", "");
+                 String[] stringValue = strVector.split(" ");
                  value=new double[stringValue.length];
             for (int i = 0; i <stringValue.length ; i++) {
-                value[i]=Double.parseDouble(stringValue[i].trim());
+                value[i]=Double.parseDouble(stringValue[i]);
                 
             }
                 }
@@ -37,16 +39,17 @@ class Vector extends Var {
 
         @Override
         public String toString() {
-        StringBuilder sb=new StringBuilder();
-        sb.append("{");
-        String delimiter="";
-                for (double element:value ) {
-                sb.append(delimiter);
-                sb.append(element);
-                delimiter=", ";
+        StringBuilder sb=new StringBuilder("{");
+            for (int i = 0; i <value.length ; i++) {
+                if (i !=value.length -1) {
+                    sb.append(value[i]).append(", ");
                 }
-                sb.append("}");
-                return sb.toString();
+                else {
+                    sb.append(value[i]).append("}");
+                }
+            }
+            return sb.toString();
+
         }
 
     @Override

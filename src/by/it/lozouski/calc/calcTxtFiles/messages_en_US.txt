@@ -1,0 +1,34 @@
+error.divisionByZero=Division by ZERO isn't possible.
+error.differentLengthVectors=Different lengths of vectors!
+error.invalidLength=Invalid length of matrix or vector.
+error.incorrectMatrixFormat=Incorrect matrix format.
+error.operationAdd=Operation addition
+error.operationSub=Operation subtraction
+error.operationMul=Operation multiplication
+error.operationDiv=Operation division
+error.isntPossible= is impossible.
+error.incorrectInput=Incorrect input. Please try again.
+error.errors=Message error:
+error.incorrectVarCreate=Incorrect variable creation, please try again.
+error.varIsNull=Var is null!!!
+error.fileNotFound=File not found exception ---
+error.wrongVarName=Wrong variable name.
+log.errorIO=ERROR...IO;
+log.time=Log time:
+log.event=. Event:
+log.programStart=****************************-------The program was run. -------****************************
+log.programFinish=****************************-------The program was end. -------****************************
+log.result=Result:
+messages.calcStarted=Calculate started! Lets GO!!!
+messages.savedVar=Variables, saved in the memory storage:
+messages.storedVar= variable stored in memory.
+messages.memoryIsEmpty=Memory is empty!
+messages.needThisValueFormat=Please, input the value of the format: Scalar, Vector, Matrix and try again.
+messages.needThisVarFormat=Please, input the variable name in the format:
+messages.formatLetters=Latin Letter and numbers = your value(Scalar, Vector, Matrix)
+messages.undefinedVar=Undefined variable:
+messages.currentLang=Current language: english.
+
+
+
+

@@ -1,0 +1,33 @@
+error.divisionByZero=Деление на НОЛЬ невозможно.
+error.differentLengthVectors=Различная длина векторов!
+error.invalidLength=Некорректная длина вектора или матрицы!
+error.incorrectMatrixFormat=Некорректный формат матрицы!
+error.operationAdd=Операция сложения
+error.operationSub=Операция вычитания
+error.operationMul=Операция умножения
+error.operationDiv=Операция деления
+error.isntPossible= не возможна.
+error.incorrectInput=Некорректный ввод. Пожалуйста повторите попытку.
+error.errors=Сообщение об ошибке:
+error.incorrectVarCreate=Некорректное создание переменной. Пожалуйста повторите попытку.
+error.varIsNull=В переменной ничего нет.
+error.fileNotFound=Исключение - Файл не обнаружен! ---
+error.wrongVarName=Неверное имя переменной.
+log.errorIO=Ошибка ввода-вывода;
+log.time=Время лога:
+log.event=. Событие:
+log.programStart=****************************-------Программа была запущена. -------****************************
+log.programFinish=****************************-------Программа была завершена. -------****************************
+log.result=Результат:
+messages.calcStarted=Калькулятор стартовал! Приступим!
+messages.savedVar=Переменные, сохраненные в памяти:
+messages.storedVar= переменная сохранена в памяти.
+messages.memoryIsEmpty=Память пуста!
+messages.needThisValueFormat=Пожалуйста, введите значение в формате: Скаляр, Вектор, Матрица и повторите снова.
+messages.needThisVarFormat=Пожалуйста, введите имя переменной в формате:
+messages.formatLetters=Латинские буквы и цифры = ваше значение(Скаляр, Вектор или Матрица)
+messages.undefinedVar=Неопределенная переменная:
+messages.currentLang=Текущий язык: русский.
+
+
+

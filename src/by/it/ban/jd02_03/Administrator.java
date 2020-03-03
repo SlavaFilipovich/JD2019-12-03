@@ -21,7 +21,7 @@ public class Administrator implements Runnable {
         Thread thread = new Thread(cashier);
         threads.add(thread);
         thread.start();
-        Helper.sleep(1000);
+        Helper.sleep(3000);
         while (Dispatcher.marketNotClosed()) {
             int length = QueueBuyer.getLength() + QueuePensioneer.getLength();
             openedCashiers = Dispatcher.getCashCount();

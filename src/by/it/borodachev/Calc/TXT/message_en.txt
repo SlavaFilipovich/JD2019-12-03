@@ -1,0 +1,10 @@
+messages.calculator_running 	= The calculator is running.
+messages.division_by_zero 	= Division by zero
+messages.diff_Length 	=Diffirent length
+messages.zero_length 	=Array length equals 0
+messages.index_error 	=Index error
+messages.unknown_operation 	=Unknown operation
+messages.imposible_operation 	=Imposible operation
+message.unknown_error 	= Unknown Error
+message.error_conversion 	= Error conversion
+

@@ -1,9 +1,11 @@
 package by.it.samuseva.calc;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Map;
 
-public class VarFile {
+class VarFile {
     private static String varFileName = getPath("vars.txt", VarFile.class);
     static String getPath(String fileName, Class<?> aClass) {
         String pathDir = System.getProperty("user.dir") + File.separator + "src" + File.separator;
@@ -28,7 +30,22 @@ public class VarFile {
     }
 
     static void load (){
-        try (BufferedReader reader = new BufferedReader(new FileReader(varFileName))){
+
+       /* try {
+            Parset parset = new Parset();
+            Files.lines(Paths.get(varFileName)).forEach(expression -> {
+                try {
+                    parset.calc(expression);
+                } catch (CalcException e) {
+                    e.printStackTrace();
+                }
+            });
+        } catch (IOException ex) {
+           // ex.printStackTrace();
+        }*/
+
+
+       try (BufferedReader reader = new BufferedReader(new FileReader(varFileName))){
             Parset parset = new Parset();
             String line;
             while ((line=reader.readLine())!= null){
@@ -38,7 +55,6 @@ public class VarFile {
                     e.printStackTrace();
                 }
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }

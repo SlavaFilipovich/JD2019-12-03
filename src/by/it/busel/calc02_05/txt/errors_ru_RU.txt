@@ -1,0 +1,12 @@
+CalcException.constructor=ERROR: (ОШИБКА:)
+Parser.m.ifOneOrMoreOperandsExistOtherwiseThrowCalcException=Вы ввели только математически оператор.
+Parser.m.calculateVar=Математический оператор не найден.\nПроверте выражениекоторое Вы. Затем опять введите своё выражение, пожалуйста!
+Printer.m.formLog_input=Ввод:
+Printer.m.formLog_output=Вывод:
+ResourceManager.m.informAboutCurrentLocale=Текущий язык - %s\n
+Scalar.m.div_Scalar_Vector_Matrix=Деление на ноль.
+Var.m.createVar=Неправильный формат ввода или несохранённое(ые) Var-выражение(ия)!\nПроверьте выражение, которое Вы ввели. Затем введите Ваше выражение опять, пожалуйста!
+Var.add_all=Операцию \"сложения\" %s + %s нельзя выполнить.
+Var.sub_all=Операцию \"вычитание\" %s - %s нельзя выполнить.
+Var.mul_all=Операцию \"умножение\" %s * %s нельзя выполнить.
+Var.div_all=Операцию \"деление\" %s / %s нельзя выполнить.

@@ -1,0 +1,4 @@
+D:\Prog\IdeaProjects\JD2019-12-04\src\by\it\popkov\jd02_05>native2ascii.exe -encoding utf-8 hello.txt hello.properties
+D:\Prog\IdeaProjects\JD2019-12-04\src\by\it\popkov\jd02_05>native2ascii.exe -encoding utf-8 hello_be_BY.txt hello_be_BY.properties
+D:\Prog\IdeaProjects\JD2019-12-04\src\by\it\popkov\jd02_05>native2ascii.exe -encoding utf-8 hello_en_US.txt hello_en_US.properties
+D:\Prog\IdeaProjects\JD2019-12-04\src\by\it\popkov\jd02_05>native2ascii.exe -encoding utf-8 hello_ru_RU.txt hello_ru_RU.properties

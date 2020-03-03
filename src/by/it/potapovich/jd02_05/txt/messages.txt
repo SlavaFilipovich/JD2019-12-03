@@ -1,0 +1,4 @@
+user.firstname=Kristina
+user.lastname=Potapovich
+message.question=How do you do?
+message.welcome=Hi!

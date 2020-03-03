@@ -24,8 +24,8 @@ class Buyer extends Thread implements IBuyer, IUseBacket {
         System.out.println(this + " " +"started choosing by goods.");
         takeBacket();
         int timeout = Helper.random(500, 2000);
-      /*  if (pensioneer==true) Helper.sleep(timeout*3/2);
-        else  Helper.sleep(timeout);*/
+        if (pensioneer==true) Helper.sleep(timeout*3/2);
+        else  Helper.sleep(timeout);
         System.out.println(this + " " + "closed choosing by goods.");
 
     }

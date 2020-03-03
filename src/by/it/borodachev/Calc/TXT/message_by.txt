@@ -1,0 +1,9 @@
+message.calculator_running = Працуем
+error.division_by_zero = Деленiе на 0
+error.diff_Length =Длiны разлiчваюца
+error.zero_length =Длiна массiва/вектора/матрiцы =0
+error.index_error =не верен iндекс
+error.unknown_operation =Невядомая операцыя
+error.imposible_operation =Немагчымая операцыя
+error.unknown_error = Незразумелая памылка
+error.error_conversion = Памылка конвертацыi

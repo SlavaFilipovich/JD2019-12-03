@@ -7,7 +7,7 @@ class Printer  {
             Log.writeLog(calc.toString());
             System.out.println(calc.toString());
         }else {
-            throw new CalcException("Результат null");
+            throw new CalcException(Error.NULL_RESULT);
         }
 
     }

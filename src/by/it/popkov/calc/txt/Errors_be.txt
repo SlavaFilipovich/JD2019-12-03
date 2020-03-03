@@ -1,0 +1,6 @@
+error.UNCORRECT_MATRIX_FORMAT=Не добры фармат матрыц
+error.UNCORRECT_VECTOR_FORMAT=Не добры фармат вектора
+error.DIVISION_BY_ZERO=Дзяленне на нуль
+error.INPUT_ERROR=Памылка увода
+error.NULL_RESULT=Нуль вынік
+error.IMPOSSIBLE_OPERATION=Немагчымая аперацыя

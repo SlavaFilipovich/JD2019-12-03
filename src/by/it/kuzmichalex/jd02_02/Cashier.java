@@ -1,6 +1,6 @@
 package by.it.kuzmichalex.jd02_02;
 
-class Cashier implements Runnable {
+class  Cashier implements Runnable {
     private String cashierName;
     private int cashierNumber;
     private volatile boolean isPaused = false;

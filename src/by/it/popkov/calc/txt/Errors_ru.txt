@@ -1,0 +1,6 @@
+error.UNCORRECT_MATRIX_FORMAT=Не коректный формат матрицы
+error.UNCORRECT_VECTOR_FORMAT=Не коректный формат вектора
+error.DIVISION_BY_ZERO=Деление на нуль
+error.INPUT_ERROR=Ошибка ввода
+error.NULL_RESULT=Нулевой результат
+error.IMPOSSIBLE_OPERATION=Невозможная операция

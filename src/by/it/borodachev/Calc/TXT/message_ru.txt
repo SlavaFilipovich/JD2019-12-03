@@ -1,0 +1,10 @@
+messages.calculator_running = работаем
+messages.division_by_zero = Деление на 0
+messages.diff_Length =Длины отличаются
+messages.zero_length =Длина массива/вектора/матрицы =0
+messages.index_error =не верен индекс
+messages.unknown_operation =неизвестная операция
+messages.imposible_operation =недопустимая операция
+message.unknown_error = неизвестная ошибка
+message.error_conversion = Ошибка преобразования
+

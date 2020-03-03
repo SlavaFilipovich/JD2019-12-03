@@ -103,7 +103,7 @@ class Scalar extends Var {
 
     @Override
     public Var div(Scalar other) throws CalcException {
-        if (other.value == 0) throw new CalcException("Деление на 0");
+        if (other.value == 0) throw new CalcException(Error.DIVISION_BY_ZERO);
         return new Scalar(this.value / other.value);
     }
 }

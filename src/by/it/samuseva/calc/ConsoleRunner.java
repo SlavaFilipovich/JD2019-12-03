@@ -10,11 +10,13 @@ public class ConsoleRunner {
         VarFile.load();
         while (true){
             String line = scan.next();
-            if (line.equals("end")){
+            if (line.equals("end")|| line.equals("END") ){
                 break;
             }
+            Var rezult = null;
             try {
-                printer.print(parset.calc(line));
+                rezult = parset.calc(line);
+                printer.print(rezult);
             } catch (CalcException e) {
                 System.out.println(e.getMessage());
             }

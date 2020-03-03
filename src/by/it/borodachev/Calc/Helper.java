@@ -14,5 +14,7 @@ public class Helper {
 
         return fileName;
     }
-
+    static String getLocalePath(Class<?> aClass) {
+        return  aClass.getName().replace(aClass.getSimpleName(), "")+"Properties.message";
+    }
 }

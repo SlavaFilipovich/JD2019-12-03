@@ -35,7 +35,8 @@ abstract class Var implements Operation {
                 return vars.get(operand);
             }
             else
-                throw new CalcException("Невозможно создать такую переменную: " + operand);
+                throw new CalcException("Переменная отсутствует в списке " +
+                        "или невозможно создать такую переменную: " + operand);
         }
     }
 

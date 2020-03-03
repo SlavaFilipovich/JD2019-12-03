@@ -1,0 +1,6 @@
+messages.firstname=Аляксандр
+messages.lastname=Кузьмiч
+messages.question=Як справы?
+messages.welcome=Прывiтанне!
+messages.current_date=Сёння:
+messages.enter_action=Калі ласка, увядзіце en, ru, by, каб змяніць мову; end, каб выйсці.

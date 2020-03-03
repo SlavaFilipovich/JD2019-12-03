@@ -1,4 +1,5 @@
 package by.it.lozouski.calc;
+import static by.it.lozouski.calc.ConsoleRunner.langService;
 
 class Matrix extends Var {
 
@@ -51,7 +52,13 @@ class Matrix extends Var {
     }
 
     @Override
-    Var add(Matrix otherMatrix) {
+    Var add(Matrix otherMatrix) throws CalcException {
+        if (this.value.length != otherMatrix.value.length){
+            throw new CalcException(String.format("%s ",langService.get(Error.ERR_INCORRECT_MATRIX_FORMAT)));
+        }
+        if (this.value[0].length != otherMatrix.value[0].length){
+            throw new CalcException(String.format("%s ",langService.get(Error.ERR_INCORRECT_MATRIX_FORMAT)));
+        }
         double[][] sum = new double[this.value.length][this.value[0].length];
         for (int i = 0; i < this.value.length; i++) {
             for (int j = 0; j < this.value[0].length; j++) {
@@ -68,11 +75,7 @@ class Matrix extends Var {
 
     @Override
     Var sub(Matrix otherMatrix) throws CalcException {
-        try {
             return otherMatrix.add(this.mul(new Scalar(-1)));
-        }catch (Exception e){
-            throw new CalcException("Operation Matrix-Matrix impossible");
-        }
     }
 
     @Override
@@ -92,8 +95,10 @@ class Matrix extends Var {
     }
 
     @Override
-    Var mul(Matrix otherMatrix) throws CalcException{
-        try{
+    Var mul(Matrix otherMatrix) throws CalcException {
+        if (otherMatrix.value[0].length != this.value.length){
+            throw new CalcException(String.format("%s ",langService.get(Error.ERR_INCORRECT_MATRIX_FORMAT)));
+        }
         double[][] result = new double[otherMatrix.value.length][this.value[0].length];
         for (int i = 0; i < otherMatrix.value.length; i++) {
             for (int j = 0; j < this.value[0].length; j++) {
@@ -103,9 +108,6 @@ class Matrix extends Var {
             }
         }
         return new Matrix(result);
-        }catch (Exception e){
-            throw new CalcException("Operation isn't possible.");
-        }
     }
 
     @Override

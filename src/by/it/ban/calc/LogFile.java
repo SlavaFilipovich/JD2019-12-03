@@ -1,6 +1,8 @@
 package by.it.ban.calc;
 
 import java.io.*;
+import java.text.DateFormat;
+import java.util.Date;
 
 
 class LogFile {
@@ -21,8 +23,10 @@ class LogFile {
     }
 
     static void print(String message) throws IOException {
-        out.write(message);
-        out.write('\n');
+        Date d = new Date();
+        out.append(DateFormat
+                .getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM).format(d))
+                .append(" | ").append(message).append("\n");
     }
 
     static void close() {
@@ -54,10 +58,8 @@ class LogFile {
                 }
                 writer.write(reader.readLine()+"\n");
             }
-            reader.close();
-            writer.close();
-            System.out.println("delete=" + oldFile.delete());
-            System.out.println("rename=" + newFile.renameTo(oldFile));
+            //System.out.println("delete=" + oldFile.delete());
+            //System.out.println("rename=" + newFile.renameTo(oldFile));
         } catch (IOException e) {
             e.printStackTrace();
         }

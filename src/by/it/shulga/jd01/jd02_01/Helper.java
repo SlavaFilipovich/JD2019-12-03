@@ -1,27 +1,29 @@
 package by.it.shulga.jd01.jd02_01;
 
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 class Helper {
-    private static Random generator=new Random(System.nanoTime());
-    static void sleep(int timiout){
-        try {
-            Thread.sleep(timiout/Dispatcher.K_SPEED);
-        } catch (InterruptedException e) {
-            System.out.println("WOW");
-        }
+
+    static final Map<String, Integer> goodsMap = new HashMap<>();
+    static void writeGoodsMap(){
+        goodsMap.put("water", 1);
+        goodsMap.put("bread", 2);
+        goodsMap.put("apples", 3);
+        goodsMap.put("milk", 4);
+        goodsMap.put("eggs", 5);
+        goodsMap.put("cake", 6);
+        goodsMap.put("meat", 7);
     }
 
-    static int random(int min, int max){
-        return min+generator.nextInt(max-min+1);
-    }
-    static int random(int max){
-        return generator.nextInt(max+1);
-    }
-    static Double randomPrice(double maxDouble) {
-        return 0.01+maxDouble*generator.nextDouble();
-    }
+    private static Random random = new Random(System.nanoTime());
 
-
-
+    public static int randNum(int min, int max) {
+        return random.nextInt((max - min) + 1) + min;
+    }
+    public static int randNumUntil(int max) {
+        return randNum(0, max);
+    }
 }

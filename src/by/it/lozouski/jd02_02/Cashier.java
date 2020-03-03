@@ -20,12 +20,14 @@ class Cashier implements Runnable {
         while (!Dispetcher.marketClosed()) {
             Buyer buyer = QueueBuyer.extractBuyerFromQueue();
             if (buyer != null) {
+                StringBuilder sb = new StringBuilder();
                 System.out.println(this + "НАЧАЛ ОБСЛУЖИВАНИЕ " + buyer);
-                Help.sleep(Help.randomGenerate(2000, 5000));
-                System.out.println(this + "Список товаров: " + buyer.toString()
-                        + "--- " + Arrays.toString(buyer.getBacketWithBoughtGoods().keySet().toArray()));
-                System.out.println(this + buyer.toString() + "-- Сумма чека = " + buyer.getAmountOfGoods() + "руб.");
+                sb.append("Список товаров: ").append(buyer.toString()).append("--- ");
+                sb.append(Arrays.toString(buyer.getBacketWithBoughtGoods().keySet().toArray())).append('\n');
+                sb.append(this).append(buyer.toString()).append("--- Сумма чека = ").append(buyer.getAmountOfGoods()).append("руб.");
+                System.out.println(sb);
                 System.out.println(this + "ЗАКОНЧИЛ ОБСЛУЖИВАНИЕ " + buyer);
+                Help.sleep(Help.randomGenerate(2000, 5000));
                 synchronized (buyer){
                     buyer.notify();
                 }

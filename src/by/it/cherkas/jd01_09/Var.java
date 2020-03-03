@@ -1,9 +1,9 @@
 package by.it.cherkas.jd01_09;
 
-import java.util.regex.Pattern;
+
 
 abstract class Var implements Operation {
-    static Var createVar(String operand) {
+    static Var newVar(String operand) {
         operand = operand.trim().replace("\\s+", "");
         if (operand.matches(Patterns.SCALAR))
             return new Scalar(operand);
