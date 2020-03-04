@@ -1,0 +1,3 @@
+04-03-2020 16:52:02 | Result = 0, it's incorrect
+04-03-2020 17:02:06 | Result = 0, it's incorrect
+04-03-2020 17:03:01 | Division by zero
