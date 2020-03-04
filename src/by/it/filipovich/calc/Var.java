@@ -49,7 +49,7 @@ abstract class Var implements Operation {
             if (var != null) {
                 return var;
             } else
-                Logger.getInstance().logWrite(Messages.INCORRECT_EXPRESSION+operand);
+                Logger.getInstance().logWrite(Messages.INCORRECT_EXPRESSION+" "+operand);
                 throw new CalcException("Unknown expression: "+operand);
         }
     }

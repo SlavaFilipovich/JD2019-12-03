@@ -41,6 +41,7 @@ public class ConsoleRunner {
             try {
                 Var result = parser.calc(expression);
                 pr.print(result);
+                Logger.getInstance().logWrite(Messages.PRINT_EXPRESSION + " "+expression+" "+result.toString());
             } catch (CalcException e) {
                 System.out.println(e.getMessage());
                 Logger.getInstance().logWrite(e.getMessage());

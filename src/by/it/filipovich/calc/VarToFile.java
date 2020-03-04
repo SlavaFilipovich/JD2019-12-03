@@ -46,7 +46,7 @@ public class VarToFile {
                 }
             }
         } catch (FileNotFoundException e) {
-            Logger.getInstance().logWrite(varFile+" error"+e.getMessage());
+            Logger.getInstance().logWrite(varFile+" error "+e.getMessage());
             throw new CalcException(varFile+" error",e);
         }
     }

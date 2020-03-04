@@ -15,4 +15,5 @@ public interface Messages {
     String LOAD_FROM_FILES = "messages.loadingObjectsFromFile";
     String ENTER_EXPRESSION = "messages.typingExpression";
     String NULL_OBJECT = "messages.Error!!! OneOfTheObjects is NULL";
+    String PRINT_EXPRESSION = "messages.PrintExpression";
 }
