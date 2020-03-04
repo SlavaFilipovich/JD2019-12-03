@@ -27,10 +27,12 @@ public class VarToFile {
                         try {
                             parser.calc(expression);
                         } catch (CalcException e) {
+                            Logger.getInstance().logWrite(e.getMessage());
                             e.printStackTrace();
                         }
                     });
         } catch (IOException e) {
+            Logger.getInstance().logWrite(e.getMessage());
             e.printStackTrace();
         }
     }
@@ -44,6 +46,7 @@ public class VarToFile {
                 }
             }
         } catch (FileNotFoundException e) {
+            Logger.getInstance().logWrite(varFile+" error"+e.getMessage());
             throw new CalcException(varFile+" error",e);
         }
     }

@@ -47,6 +47,7 @@ class Parser {
                     return left.div(right);
             }
         }
+        Logger.getInstance().logWrite(Messages.NULL_OBJECT);
         throw new CalcException("What's going on???");
     }
 
@@ -71,7 +72,6 @@ class Parser {
             String right = operands.remove(i);
             result = oneOperation(left, operation, right);
             operands.add(i,result.toString());
-
         }
         return Var.createVar(operands.get(0));
     }

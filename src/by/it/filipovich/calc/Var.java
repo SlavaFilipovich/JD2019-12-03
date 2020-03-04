@@ -8,22 +8,26 @@ abstract class Var implements Operation {
 
     @Override
     public Var add(Var other) throws CalcException {
+        Logger.getInstance().logWrite("Operating for "+this+" + "+ other + " is impossible");
         throw new CalcException("Operating for "+this+" + "+ other + " is impossible");
 
     }
 
     @Override
     public Var sub(Var other) throws CalcException {
+        Logger.getInstance().logWrite("Operating for "+this+" - "+ other + " is impossible");
         throw new CalcException("Operating for "+this+" - "+ other + " is impossible");
     }
 
     @Override
     public Var mul(Var other) throws CalcException {
+        Logger.getInstance().logWrite("Operating for "+this+" * "+ other + " is impossible");
         throw new CalcException("Operating for "+this+" * "+ other + " is impossible");
     }
 
     @Override
     public Var div(Var other) throws CalcException {
+        Logger.getInstance().logWrite("Operating for "+this+" / "+ other + " is impossible");
         throw new CalcException("Operating for "+this+" / "+ other + " is impossible");
     }
 
@@ -45,6 +49,7 @@ abstract class Var implements Operation {
             if (var != null) {
                 return var;
             } else
+                Logger.getInstance().logWrite(Messages.INCORRECT_EXPRESSION+operand);
                 throw new CalcException("Unknown expression: "+operand);
         }
     }
