@@ -7,9 +7,9 @@ import java.util.ArrayDeque;
 
 public class Logger {
     private static volatile Logger instance;
-    private static final String loggerFile = pathToFile("log.txt", Logger.class);
+    private static String loggerFile = pathToFile("log.txt", Logger.class);
     private static ArrayDeque<String> logList = new ArrayDeque<>();
-    private String currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
+    private String currentTime;
 
     public Logger() {
     }
@@ -23,6 +23,7 @@ public class Logger {
 
     void logWrite(String message) {
         loadLog();
+        currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
         logList.add(currentTime + " | " + message);
         try (PrintWriter pw = new PrintWriter(new FileWriter(loggerFile))) {
             for (String s : logList) {

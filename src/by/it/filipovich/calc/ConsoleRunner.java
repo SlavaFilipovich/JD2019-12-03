@@ -7,6 +7,7 @@ import java.util.TreeMap;
 
 public class ConsoleRunner {
     public static void main(String[] args) {
+        Logger.getInstance().logWrite(Messages.CALC_STARTED);
         Logger.getInstance().logWrite(Messages.CREATE_OBJECTS);
         Scanner scanner = new Scanner(System.in);
         Parser parser = new Parser();
@@ -18,6 +19,7 @@ public class ConsoleRunner {
             String expression = scanner.nextLine();
             if(expression.equals("end")) {
                 Logger.getInstance().logWrite(Messages.ENTER_END);
+                Logger.getInstance().logWrite(Messages.CALC_FINISHED);
                 break;
             }
             if(expression.equals("printvar")){
@@ -25,6 +27,7 @@ public class ConsoleRunner {
                 for (Map.Entry<String, Var> pair : Var.vars.entrySet()) {
                     System.out.println(pair);
                 }
+                Logger.getInstance().logWrite(Messages.CALC_FINISHED);
                 break;
             }
             if(expression.equals("sortvar")){
@@ -32,6 +35,7 @@ public class ConsoleRunner {
                 for (Map.Entry<String, Var> varEntry : new TreeMap<>(Var.vars).entrySet()) {
                     System.out.println(varEntry);
                 }
+                Logger.getInstance().logWrite(Messages.CALC_FINISHED);
                 break;
             }
             try {
